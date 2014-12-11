@@ -1,0 +1,8 @@
+C:\Users\adamjoshuagray\AppData\Local\Temporary Projects\XORLang SAT Solver\bin\Debug\XORLang SAT Solver.exe
+C:\Users\adamjoshuagray\AppData\Local\Temporary Projects\XORLang SAT Solver\bin\Debug\XORLang SAT Solver.pdb
+C:\Users\adamjoshuagray\AppData\Local\Temporary Projects\XORLang SAT Solver\obj\x86\Debug\XORLang SAT Solver.exe
+C:\Users\adamjoshuagray\AppData\Local\Temporary Projects\XORLang SAT Solver\obj\x86\Debug\XORLang SAT Solver.pdb
+C:\Users\adamjoshuagray\Documents\Visual Studio 2010\Projects\XORLang SAT Solver\XORLang SAT Solver\obj\x86\Debug\XORLang SAT Solver.exe
+C:\Users\adamjoshuagray\Documents\Visual Studio 2010\Projects\XORLang SAT Solver\XORLang SAT Solver\obj\x86\Debug\XORLang SAT Solver.pdb
+C:\Users\adamjoshuagray\Documents\Visual Studio 2010\Projects\XORLang SAT Solver\XORLang SAT Solver\bin\Debug\XORLang SAT Solver.exe
+C:\Users\adamjoshuagray\Documents\Visual Studio 2010\Projects\XORLang SAT Solver\XORLang SAT Solver\bin\Debug\XORLang SAT Solver.pdb
