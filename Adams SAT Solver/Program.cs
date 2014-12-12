@@ -12,7 +12,7 @@ namespace Adams_SAT_Solver
             VariableExpression a = true;
             VariableExpression b = false;
             VariableExpression c = false;
-            Expression exp = (a & c);
+            Expression exp = ((a & !c) & !(a & (!b & c))) & !a;
             Console.WriteLine(exp.Evaluate().ToString());
             VariableStateListCollection vslc = SAT(exp);
             foreach (VariableStateList vsl in vslc)
@@ -120,7 +120,7 @@ namespace Adams_SAT_Solver
                         {
                             vsl[kvp.Key] = kvp.Value;
                         }
-                        vsl.OverallEvaluation = (vsli.OverallEvaluation == vslj.OverallEvaluation);
+                        vsl.OverallEvaluation = (vsli.OverallEvaluation && vslj.OverallEvaluation);
                         vslc.Add(vsl);
                     }
                 }

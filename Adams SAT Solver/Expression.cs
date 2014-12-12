@@ -60,11 +60,11 @@ namespace Adams_SAT_Solver
         {
             if (TermA != null & TermB != null)
             {
-                return TermA.Evaluate() ^ TermB.Evaluate();
+                return TermA.Evaluate() & TermB.Evaluate();
             }
             else
             {
-                throw new InvalidOperationException("XOR expression must have both sub terms defined.");
+                throw new InvalidOperationException("AND expression must have both sub terms defined.");
             }
         }
     }
