@@ -10,3 +10,4 @@ C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\obj\x86\Debug
 C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\obj\x86\Debug\XORLang SAT Solver.pdb
 C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\bin\Debug\XORLang SAT Solver.exe
 C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\bin\Debug\XORLang SAT Solver.pdb
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\obj\x86\Debug\Adams_SAT_Solver.csprojResolveAssemblyReference.cache

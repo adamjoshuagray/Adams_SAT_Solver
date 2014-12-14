@@ -18,10 +18,11 @@ namespace Adams_SAT_Solver
             VariableExpression f = false;
             VariableExpression g = false;
             Expression exp = ((a & !c) & !(a & (!b & c))) & (( f & (!d & !(b & !e))) & !e);
-            exp = GenerateRandomExpression(10, 5, 0.9);
+            exp = GenerateRandomExpression(3, 70, 0.95);
             //Console.WriteLine(exp.Evaluate().ToString());
             VariableStateListCollection vslc = SAT(exp);
             int count = 0;
+            Console.WriteLine(exp.ToString());
             foreach (VariableStateList vsl in vslc)
             {
                 if (vsl.OverallEvaluation)

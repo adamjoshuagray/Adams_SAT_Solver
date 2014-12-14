@@ -30,6 +30,51 @@ namespace Adams_SAT_Solver
                 }
             }
         }
+        public override string ToString()
+        {
+            Dictionary<VariableExpression, string> varnames = new Dictionary<VariableExpression, string>();
+            return _ToString(varnames);
+        }
+        private string _ToString(Dictionary<VariableExpression, string> varnames)
+        {
+            string str = "";
+            if (this is ANDExpression)
+            {
+                ANDExpression aexp = this as ANDExpression;
+                str = "(" + aexp.TermA._ToString(varnames) + "&" + aexp.TermB._ToString(varnames) + ")";
+            }
+            if (this is NOTExpression)
+            {
+                NOTExpression nexp = this as NOTExpression;
+                str = "!" + nexp.Term._ToString(varnames);
+            }
+            if (this is VariableExpression)
+            {
+                VariableExpression vexp = this as VariableExpression;
+                if (varnames.ContainsKey(vexp))
+                {
+                    str = varnames[vexp];
+                }
+                else
+                {
+                    int cnt = varnames.Count;
+                    string cntstr = cnt.ToString();
+                    cntstr = cntstr.Replace("0", "a");
+                    cntstr = cntstr.Replace("1", "b");
+                    cntstr = cntstr.Replace("2", "c");
+                    cntstr = cntstr.Replace("3", "d");
+                    cntstr = cntstr.Replace("4", "e");
+                    cntstr = cntstr.Replace("5", "f");
+                    cntstr = cntstr.Replace("6", "g");
+                    cntstr = cntstr.Replace("7", "h");
+                    cntstr = cntstr.Replace("8", "i");
+                    cntstr = cntstr.Replace("9", "j");
+                    varnames.Add(vexp, cntstr);
+                    str = cntstr;
+                }
+            }
+            return str;
+        }
         public static ANDExpression operator &(Expression a, Expression b)
         {
             ANDExpression exp = new ANDExpression();
@@ -80,6 +125,7 @@ namespace Adams_SAT_Solver
             return !Term.Evaluate();
         }
     }
+
     class VariableExpression : Expression
     {
         private bool _Value;
