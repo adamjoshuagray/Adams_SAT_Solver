@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Adams_SAT_Solver
 {
-    abstract class Expression
+    public abstract class Expression
     {
         public abstract bool Evaluate();
         public void Reset(int setlevel)
@@ -73,6 +73,16 @@ namespace Adams_SAT_Solver
                     str = cntstr;
                 }
             }
+            if (this is ORExpression)
+            {
+                ORExpression oexp = this as ORExpression;
+                str = "(" + oexp.TermA._ToString(varnames) + "|" + oexp.TermB._ToString(varnames) + ")";
+            }
+            if (this is XORExpression)
+            {
+                XORExpression xexp = this as XORExpression;
+                str = "(" + xexp.TermA._ToString(varnames) + "^" + xexp.TermB._ToString(varnames) + ")";
+            }
             return str;
         }
         public static ANDExpression operator &(Expression a, Expression b)
@@ -88,8 +98,22 @@ namespace Adams_SAT_Solver
             exp.Term = a;
             return exp;
         }
+        public static ORExpression operator |(Expression a, Expression b)
+        {
+            ORExpression exp = new ORExpression();
+            exp.TermA = a;
+            exp.TermB = b;
+            return exp;
+        }
+        public static XORExpression operator ^(Expression a, Expression b)
+        {
+            XORExpression exp = new XORExpression();
+            exp.TermA = a;
+            exp.TermB = b;
+            return exp;
+        }
     }
-    class ANDExpression : Expression
+    public abstract class BinaryExpression : Expression
     {
         public Expression TermA
         {
@@ -101,6 +125,9 @@ namespace Adams_SAT_Solver
             get;
             set;
         }
+    }
+    public class ANDExpression : BinaryExpression
+    {
         public override bool Evaluate()
         {
             if (TermA != null & TermB != null)
@@ -113,7 +140,35 @@ namespace Adams_SAT_Solver
             }
         }
     }
-    class NOTExpression : Expression
+    public class ORExpression : BinaryExpression
+    {
+        public override bool Evaluate()
+        {
+            if (TermA != null & TermB != null)
+            {
+                return TermA.Evaluate() | TermB.Evaluate();
+            }
+            else
+            {
+                throw new InvalidOperationException("OR expression must have both sub terms defined.");
+            }
+        }
+    }
+    public class XORExpression : BinaryExpression
+    {
+        public override bool Evaluate()
+        {
+            if (TermA != null & TermB != null)
+            {
+                return TermA.Evaluate() ^ TermB.Evaluate();
+            }
+            else
+            {
+                throw new InvalidOperationException("XOR expression must have both sub terms defined.");
+            }
+        }
+    }
+    public class NOTExpression : Expression
     {
         public Expression Term
         {
@@ -126,7 +181,7 @@ namespace Adams_SAT_Solver
         }
     }
 
-    class VariableExpression : Expression
+    public class VariableExpression : Expression
     {
         private bool _Value;
         public bool IsSet

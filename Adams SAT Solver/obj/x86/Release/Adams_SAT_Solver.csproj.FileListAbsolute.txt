@@ -1,0 +1,1 @@
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\Adams SAT Solver\obj\x86\Release\Adams_SAT_Solver.csprojResolveAssemblyReference.cache

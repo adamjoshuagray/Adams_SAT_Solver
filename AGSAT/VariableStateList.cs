@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Adams_SAT_Solver
 {
-    class VariableStateList: Dictionary<VariableExpression, bool>
+    public class VariableStateList: Dictionary<VariableExpression, bool>
     {
         public bool OverallEvaluation
         {
@@ -13,5 +13,5 @@ namespace Adams_SAT_Solver
             set;
         }
     }
-    class VariableStateListCollection : List<VariableStateList> { }
+    public class VariableStateListCollection : List<VariableStateList> { }
 }

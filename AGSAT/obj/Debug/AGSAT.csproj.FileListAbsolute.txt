@@ -1,0 +1,4 @@
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\AGSAT\bin\Debug\AGSAT.dll
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\AGSAT\bin\Debug\AGSAT.pdb
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\AGSAT\obj\Debug\AGSAT.dll
+C:\Users\adamjoshuagray\Projects\Adams_SAT_Solver\AGSAT\obj\Debug\AGSAT.pdb
